@@ -1,0 +1,21 @@
+---
+- name: Crea VM desde una plantilla
+  gather_facts: no
+  vars_files:
+    - vcenter_vars.yml
+
+  tasks:
+
+  - name: Clonar la plantilla
+    vmware_guest:
+      validate_certs: False
+      name: "{{ vm_name }}"
+      template: "{{ plantilla }}"
+      datacenter: "{{ datacenter_name }}"
+      folder: carpeta
+      state: poweredon
+      cluster: "{{ cluster_name }}"
+      wait_for_ip_address: yes
+    register: salida
+
+  - debug: var=salida
