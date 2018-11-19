@@ -4,6 +4,6 @@
 #- vcenter_password: Redhat1!
 - datacenter_name: BP Non Prod 
 - cluster_name: NTNX_Devlopment
-- plantilla: Rhel7.6 with hardening
+- plantilla: Rhel7.6 with Hard
 - vm_name: nombre-vm
 - new_vm_name: nuevo-nombre
