@@ -1,5 +1,7 @@
 ---
 - name: Crea VM desde una plantilla
+  connection: local
+  hosts: localhost
   gather_facts: no
   vars_files:
     - vcenter_vars.yml
@@ -8,6 +10,9 @@
 
   - name: Clonar la plantilla
     vmware_guest:
+#      hostname: "{{ vcenter_ip }}"
+#      username: "{{ vcenter_username }}"
+#      password: "{{ vcenter_password }}"
       validate_certs: False
       name: "{{ vm_name }}"
       template: "{{ plantilla }}"
@@ -16,6 +21,6 @@
       state: poweredon
       cluster: "{{ cluster_name }}"
       wait_for_ip_address: yes
-    register: salida
+    register: Salida
 
-  - debug: var=salida
+  - debug: var=Salida
