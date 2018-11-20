@@ -4,10 +4,6 @@
   gather_facts: no
   vars_files:
     - vcenter_vars.yml
-  hosts: localhost
-  
-  vars:
-    ansible_python_interpreter: "/usr/bin/env python3"
 
   tasks:
 
@@ -21,5 +17,3 @@
         name: "{{ vm_name }}"
         state: absent
         force: yes
-      delegate_to: localhost
-      register: facts
