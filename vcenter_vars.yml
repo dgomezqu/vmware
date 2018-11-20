@@ -3,7 +3,7 @@
 #- vcenter_username: administrator@vsphere.local
 #- vcenter_password: Redhat1!
 - datacenter_name: BP Non Prod 
-- cluster_name: NTNX_Devlopment
+- cluster_name: NTNX_Test
 - plantilla: Prueba
 - vm_name: nombre-vm
 - new_vm_name: nuevo-nombre
